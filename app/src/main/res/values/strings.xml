@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">DuwaNews</string>
+
+    <string name="menu_terbaru">Terbaru</string>
+    <string name="menu_beritautama">Berita Utama</string>
+    <string name="menu_antarkansemangat">#AntarkanSemangat</string>
+    <string name="menu_mostpopular">most popular</string>
+    <string name="var_contdesc">contdesc</string>
+    <string name="judul_headline">Judul Headline</string>
+    <string name="deskripsi_headline">Deskripsi Headline</string>
+    <string name="home">Home</string>
+    <string name="layanan">layanan</string>
+    <string name="kategori">kategori</string>
+    <string name="video">video</string>
+    <string name="fotodesc">Foto : Dok. detiknews</string>
+    <string name="detiknews">detikNews</string>
+    <string name="judul_berita">Judul Berita</string>
+    <string name="loremsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.</string>
+    <string name="duwanews">DuwaNews</string>
+    <string name="duwasport">DuwaSport</string>
+    <string name="duwafood">DuwaFood</string>
+    <string name="duwahealth">DuwaHealth</string>
+    <string name="duwalaw">DuwaLaw</string>
+    <string name="duwatravel">DuwaTravel</string>
+    <string name="duwagame">DuwaGame</string>
+    <string name="duwatech">DuwaTech</string>
+    <string name="duwaoto">DuwaOto</string>
+    <string name="duwaedu">DuwaEdu</string>
+    <string name="rekom_berita">Rekomendasi Berita</string>
+    <string name="title_berita">Jadwal Timnas Indonesia di Kualifikasi Piala Dunia 2026 Berikutnya</string>
+    <string name="ket_berita">DuwaSport ~ Rabu, 27 Maret 2024 19.45 WIB</string>
+    <string name="nama_us">Yefta Indri</string>
+    <string name="tv_nama">Nama Lengkap</string>
+    <string name="logout">Keluar</string>
+    <string name="tv_email">Email</string>
+    <string name="email_us">yeftaindri@gmail.com</string>
+    <string name="tv_notelp">No Telfon</string>
+    <string name="notelp_us">081347328899</string>
+    <string name="tv_beritafav">Berita Favorit</string>
+    <string name="beritafav_us">DuwaSport</string>
+    <string name="logout_konfim">Apakah anda yakin ingin keluar?</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_account">Akun</string>
+    <string name="title_dashboard">Rekomendasi Berita</string>
+    <string name="title_home">DuwaNews</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+
+</resources>
