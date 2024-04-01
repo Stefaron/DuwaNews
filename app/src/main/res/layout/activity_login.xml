@@ -57,7 +57,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="120dp"
             android:layout_marginEnd="50dp"
-            android:hint="@string/prompt_email"
+            android:hint="@string/username"
             android:inputType="textEmailAddress"
             android:selectAllOnFocus="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
-            android:text="Log In"
+            android:text="@string/log_in"
             android:textSize="24dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +87,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="Or"
+                android:text="@string/or"
                 android:gravity="center"/>
 
             <LinearLayout
@@ -109,7 +109,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sign In with Google"
+                    android:text="@string/sign_in_with_google"
                     android:layout_gravity="center"/>
 
             </LinearLayout>
@@ -132,7 +132,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sign In with Google"
+                    android:text="@string/sign_in_with_facebook"
                     android:layout_gravity="center"/>
 
             </LinearLayout>
@@ -140,7 +140,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Don’t have an account yet? Sign Up"
+                android:text="@string/dont_have_acc"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"/>
 

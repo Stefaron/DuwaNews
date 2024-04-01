@@ -61,12 +61,17 @@
     <string name="login_failed">"Login failed"</string>
 
     <string name="signup">SIGN UP</string>
-    <string name="full">Full Name</string>
+    <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="confirm">Confirm Password</string>
     <string name="sk">I agree to the terms and conditions</string>
     <string name="haveacc">Already have an account yet? Login</string>
+    <string name="sign_in_with_google">Sign In with Google</string>
+    <string name="sign_in_with_facebook">Sign In with Facebook</string>
+    <string name="dont_have_acc">Don’t have an account yet? Sign Up</string>
+    <string name="log_in">Log In</string>
+    <string name="or">Or</string>
     <!-- TODO: Remove or change this placeholder text -->
 
 
