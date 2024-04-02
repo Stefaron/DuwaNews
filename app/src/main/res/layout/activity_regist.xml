@@ -123,6 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="80dp"
                 android:text="@string/signup"
+                android:textColor="@color/white"
                 android:backgroundTint="@color/blue"/>
 
             <TextView
