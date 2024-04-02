@@ -48,7 +48,7 @@
             android:layout_marginTop="28dp"
             android:enabled="true"
             android:backgroundTint="@color/blue"
-            android:text="@string/action_sign_in_short"
+            android:text="@string/log_in"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.46"
             app:layout_constraintStart_toStartOf="parent"

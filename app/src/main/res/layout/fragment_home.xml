@@ -29,8 +29,8 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
             android:background="@drawable/kotak_ikon"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
@@ -427,6 +427,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -441,6 +442,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"></TextView>
 
+
                 <LinearLayout
                     android:id="@+id/linearLayout4"
                     android:layout_width="match_parent"
@@ -450,6 +452,7 @@
                     android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
+
 
                     <ImageView
                         android:layout_width="90dp"
