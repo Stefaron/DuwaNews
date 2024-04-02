@@ -24,6 +24,11 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    private fun closeSearchView() {
+        // Tutup search view
+        searchView.onActionViewCollapsed()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -50,11 +55,12 @@ class MainActivity : AppCompatActivity() {
         val searchItem: MenuItem = menu.findItem(R.id.action_search)
         if (searchItem != null) {
             searchView = MenuItemCompat.getActionView(searchItem) as SearchView
-            searchView.setOnCloseListener(object : SearchView.OnCloseListener {
-                override fun onClose(): Boolean {
-                    return true
-                }
-            })
+            searchView.setOnCloseListener {
+                // Panggil method untuk menutup search view
+                closeSearchView()
+                // Kembalikan nilai true untuk menandakan bahwa event sudah ditangani
+                true
+            }
 
             val searchPlate = searchView.findViewById(androidx.appcompat.R.id.search_src_text) as EditText
             searchPlate.hint = "Search"
@@ -69,7 +75,8 @@ class MainActivity : AppCompatActivity() {
 
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
-// do your logic here                Toast.makeText(applicationContext, query, Toast.LENGTH_SHORT).show()
+                    // do your logic here
+                    // Toast.makeText(applicationContext, query, Toast.LENGTH_SHORT).show()
                     return false
                 }
 
@@ -85,12 +92,13 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onBackPressed() {
-        if (!searchView.isIconified()) {
-            searchView.onActionViewCollapsed();
-        } else {
-            super.onBackPressed();
-        }
-    }
+
+//    override fun onBackPressed() {
+//        if (!searchView.isIconified()) {
+//            searchView.onActionViewCollapsed();
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
 
 }
