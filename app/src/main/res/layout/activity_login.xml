@@ -22,6 +22,9 @@
 
         <EditText
             android:id="@+id/password"
+            android:background="@drawable/borders"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -38,13 +41,13 @@
             app:layout_constraintTop_toBottomOf="@+id/username" />
 
         <Button
-            android:id="@+id/login"
+            android:id="@+id/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginTop="28dp"
-            android:enabled="false"
-            android:text="@string/action_sign_in"
+            android:enabled="true"
+            android:text="@string/action_sign_in_short"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.46"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +55,8 @@
 
         <EditText
             android:id="@+id/username"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -60,6 +65,7 @@
             android:hint="@string/username"
             android:inputType="textEmailAddress"
             android:selectAllOnFocus="true"
+            android:background="@drawable/borders"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.842"
             app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +73,7 @@
 
         <TextView
             android:id="@+id/textView"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
@@ -88,6 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="@string/or"
+                android:textColor="@color/black"
                 android:gravity="center"/>
 
             <LinearLayout
@@ -109,40 +117,21 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:text="@string/sign_in_with_google"
                     android:layout_gravity="center"/>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/kotak_google"
-                android:layout_marginHorizontal="30dp"
-                android:orientation="horizontal"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/facebook_logo"
-                    android:padding="10dp"
-                    android:layout_gravity="start"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sign_in_with_facebook"
-                    android:layout_gravity="center"/>
-
-            </LinearLayout>
-
             <TextView
+                android:id="@+id/signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/dont_have_acc"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="30dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:text="@string/dont_have_acc" />
 
 
         </LinearLayout>

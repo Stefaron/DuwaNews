@@ -42,17 +42,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/signup"
                 android:layout_gravity="center"
-                android:textSize="36dp"
-                android:textStyle="bold"></TextView>
+                android:text="@string/signup"
+                android:textColor="@color/black"
+                android:textSize="36sp"
+                android:textStyle="bold">
+
+            </TextView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="@string/username"/>
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usernameRegis"
+                android:hint="@string/username"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="text"
@@ -62,9 +68,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="@string/email"/>
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailRegis"
+                android:hint="@string/email"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="text"
@@ -74,9 +83,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="@string/password"/>
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordRegis"
+                android:hint="@string/password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="text"
@@ -86,9 +98,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="@string/confirm"/>
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirmPasswordRegis"
+                android:hint="@string/confirm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="text"
@@ -99,10 +114,11 @@
                 android:id="@+id/checkBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="@string/sk" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="80dp"
@@ -113,6 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/haveacc"
+                android:textColor="@color/black"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"/>
 

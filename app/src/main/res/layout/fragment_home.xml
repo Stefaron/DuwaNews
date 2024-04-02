@@ -469,6 +469,7 @@
                         <TextView
                             android:layout_width="270dp"
                             android:layout_height="40dp"
+                            android:textColor="@color/black"
                             android:text="@string/title_berita"
                             android:textSize="15dp"
                             android:textStyle="bold">
@@ -478,6 +479,7 @@
                         <TextView
                             android:layout_width="280dp"
                             android:layout_height="20dp"
+                            android:textColor="@color/black"
                             android:layout_marginTop="10dp"
                             android:gravity=""
                             android:text="@string/ket_berita"
@@ -515,6 +517,7 @@
                         <TextView
                             android:layout_width="270dp"
                             android:layout_height="40dp"
+                            android:textColor="@color/black"
                             android:text="@string/title_berita"
                             android:textSize="15dp"
                             android:textStyle="bold">
@@ -524,6 +527,7 @@
                         <TextView
                             android:layout_width="280dp"
                             android:layout_height="20dp"
+                            android:textColor="@color/black"
                             android:layout_marginTop="10dp"
                             android:gravity=""
                             android:text="@string/ket_berita"
@@ -562,6 +566,7 @@
                         <TextView
                             android:layout_width="270dp"
                             android:layout_height="40dp"
+                            android:textColor="@color/black"
                             android:text="@string/title_berita"
                             android:textSize="15dp"
                             android:textStyle="bold">
@@ -571,6 +576,7 @@
                         <TextView
                             android:layout_width="280dp"
                             android:layout_height="20dp"
+                            android:textColor="@color/black"
                             android:layout_marginTop="10dp"
                             android:gravity=""
                             android:text="@string/ket_berita"
@@ -609,6 +615,7 @@
                         <TextView
                             android:layout_width="270dp"
                             android:layout_height="40dp"
+                            android:textColor="@color/black"
                             android:text="@string/title_berita"
                             android:textSize="15dp"
                             android:textStyle="bold">
@@ -618,6 +625,7 @@
                         <TextView
                             android:layout_width="280dp"
                             android:layout_height="20dp"
+                            android:textColor="@color/black"
                             android:layout_marginTop="10dp"
                             android:gravity=""
                             android:text="@string/ket_berita"

@@ -52,6 +52,7 @@
             <TextView
                 android:layout_width="120dp"
                 android:layout_height="20dp"
+                android:textColor="@color/black"
                 android:text="@string/nama_us"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -85,6 +86,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
+                        android:textColor="@color/black"
                         android:layout_gravity="start"
                         android:text="@string/tv_nama"
                         android:textSize="17dp">
@@ -94,6 +96,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
+                        android:textColor="@color/black"
                         android:text="@string/nama_us"
                         android:textStyle="bold"
                         android:textSize="15dp"
@@ -125,6 +128,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
+                        android:textColor="@color/black"
                         android:layout_gravity="start"
                         android:text="@string/tv_email"
                         android:textSize="17dp">
@@ -134,6 +138,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
+                        android:textColor="@color/black"
                         android:text="@string/email_us"
                         android:textStyle="bold"
                         android:textSize="15dp"
@@ -165,6 +170,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
+                        android:textColor="@color/black"
                         android:layout_gravity="start"
                         android:text="@string/tv_notelp"
                         android:textSize="17dp">
@@ -174,6 +180,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
+                        android:textColor="@color/black"
                         android:text="@string/notelp_us"
                         android:textStyle="bold"
                         android:textSize="15dp"
@@ -205,6 +212,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
+                        android:textColor="@color/black"
                         android:layout_gravity="start"
                         android:text="@string/tv_beritafav"
                         android:textSize="17dp">
@@ -214,6 +222,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
+                        android:textColor="@color/black"
                         android:text="@string/beritafav_us"
                         android:textStyle="bold"
                         android:textSize="15dp"
@@ -235,14 +244,7 @@
 
 
 
-
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 
 

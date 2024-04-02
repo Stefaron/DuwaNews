@@ -22,4 +22,9 @@
         android:name="com.example.examplebotomnav.ui.notifications.NotificationsFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/syaratKetentuanFragment"
+        android:name="com.example.examplebotomnav.SyaratKetentuanFragment"
+        android:label="fragment_syarat_ketentuan"
+        tools:layout="@layout/fragment_syarat_ketentuan" />
 </navigation>

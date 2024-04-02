@@ -75,6 +75,27 @@
     <!-- TODO: Remove or change this placeholder text -->
 
 
-
+    <string name="syarat">Syarat dan Ketentuan</string>
+    <string name="ketentuan">
+        1. Penerimaan Ketentuan Penggunaan:
+         \nPenggunaan aplikasi ini tunduk pada syarat dan ketentuan yang diuraikan dalam dokumen ini. Dengan mengakses atau menggunakan aplikasi ini, Anda dianggap telah membaca, memahami, dan menyetujui sepenuhnya semua syarat dan ketentuan yang tercantum di sini. Jika Anda tidak setuju dengan salah satu ketentuan ini, Anda tidak diperbolehkan untuk menggunakan aplikasi ini.
+         \n\n2. Informasi yang Disediakan:
+         \nAplikasi ini menyediakan akses kepada pengguna untuk mengakses berita, artikel, dan konten terkait lainnya. Meskipun kami berusaha untuk menyediakan informasi yang akurat dan terkini, kami tidak memberikan jaminan atau garansi atas keakuratan, kelengkapan, atau keandalan informasi yang disediakan. Pengguna bertanggung jawab untuk menggunakan kebijaksanaan mereka sendiri dalam menafsirkan dan menggunakan informasi yang tersedia dalam aplikasi ini.
+         \n\n3. Hak Cipta dan Kekayaan Intelektual:
+         \nSeluruh konten yang disediakan dalam aplikasi ini, termasuk tetapi tidak terbatas pada teks, grafik, gambar, audio, video, dan logo, dilindungi oleh hak cipta dan hukum kekayaan intelektual lainnya. Pengguna tidak diperbolehkan untuk mereproduksi, mendistribusikan, mengubah, atau menggunakan konten dalam aplikasi ini untuk tujuan komersial tanpa izin tertulis dari pemilik hak cipta.
+         \n\n4. Penggunaan Aplikasi:
+         \nPenggunaan aplikasi ini hanya diperbolehkan untuk tujuan pribadi dan non-komersial. Pengguna tidak diperbolehkan untuk menggunakan aplikasi ini untuk tujuan yang melanggar hukum atau merugikan pihak lain. Pelanggaran terhadap ketentuan ini dapat mengakibatkan penghentian akses pengguna ke aplikasi dan/atau tindakan hukum yang sesuai.
+         \n\n5. Kebijakan Privasi:
+         \nKami menghormati privasi pengguna kami. Informasi pribadi yang dikumpulkan melalui penggunaan aplikasi ini akan dikelola sesuai dengan Kebijakan Privasi kami, yang dapat diakses melalui aplikasi ini. Dengan menggunakan aplikasi ini, pengguna setuju dengan pengumpulan, penggunaan, dan pengungkapan informasi pribadi mereka sesuai dengan Kebijakan Privasi kami.
+         \n\n6. Perubahan pada Syarat dan Ketentuan:
+         \nKami berhak untuk mengubah atau memodifikasi syarat dan ketentuan ini setiap saat tanpa pemberitahuan sebelumnya. Perubahan tersebut akan efektif segera setelah diposting dalam aplikasi ini. Pengguna dianggap telah menerima perubahan tersebut dengan melanjutkan penggunaan aplikasi setelah perubahan tersebut diumumkan.
+         \n\n7. Penghentian Akses:
+         \nKami berhak untuk menghentikan atau membatasi akses pengguna ke aplikasi ini, tanpa pemberitahuan sebelumnya, jika kami yakin bahwa pengguna telah melanggar syarat dan ketentuan yang tercantum di sini.
+         \n\n8. Hukum yang Berlaku:
+         \nSyarat dan ketentuan ini tunduk pada hukum yang berlaku di wilayah tempat aplikasi ini dioperasikan. Setiap sengketa yang timbul terkait dengan penggunaan aplikasi ini akan diselesaikan di pengadilan yang berwenang di wilayah tersebut.
+         \n\n9. Kontak:
+         \nJika Anda memiliki pertanyaan atau kekhawatiran terkait dengan syarat dan ketentuan ini, silakan hubungi kami melalui informasi kontak yang tersedia dalam aplikasi ini.
+         \nDengan menggunakan aplikasi ini, Anda dianggap telah menyetujui semua syarat dan ketentuan yang tercantum di atas.</string>
+    <string name="setuju">Saya Setuju</string>
 
 </resources>
