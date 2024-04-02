@@ -146,7 +146,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_health" />
+                            android:src="@drawable/ic_heart" />
 
                     </RelativeLayout>
 
@@ -232,7 +232,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_travel" />
+                            android:src="@drawable/ic_holiday" />
 
                     </RelativeLayout>
 
@@ -358,7 +358,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_mobil" />
+                            android:src="@drawable/ic_car" />
 
                     </RelativeLayout>
 
@@ -398,7 +398,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_mortarboard" />
+                            android:src="@drawable/ic_toga" />
 
                     </RelativeLayout>
 
