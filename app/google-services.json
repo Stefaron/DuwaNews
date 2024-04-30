@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "466741678573",
+    "project_id": "duwanews-50676",
+    "storage_bucket": "duwanews-50676.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466741678573:android:586c0370d3df5d177f17e4",
+        "android_client_info": {
+          "package_name": "com.example.examplebotomnav"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAR09VVPGWWGgtFr4qpNjV-6niV1nEodU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
