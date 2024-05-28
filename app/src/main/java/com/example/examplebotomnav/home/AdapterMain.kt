@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.examplebotomnav.databinding.LayBeritaBinding
+import com.example.examplebotomnav.newsAdapter.ResponseNews
 
 class AdapterMain(
-    private val listNews: ArrayList<News>) : RecyclerView.Adapter<AdapterMain.ListViewHolder>() {
+    private val context: Context,
+    private val listNews: ArrayList<ResponseNews>) : RecyclerView.Adapter<AdapterMain.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -25,7 +27,7 @@ class AdapterMain(
         Glide.with(holder.itemView.context)
             .load(photo)
             .into(holder.binding.imgNews)
-        holder.binding.tvwTitle.text = name
+        holder.binding.tvwTitle.text = name.toString()
         holder.binding.tvwDesc.text = description
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listNews[holder.adapterPosition]) }
     }
@@ -35,6 +37,12 @@ class AdapterMain(
     class ListViewHolder(val binding: LayBeritaBinding) : RecyclerView.ViewHolder(binding.root)
 
     interface OnItemClickCallback {
-        fun onItemClicked(data: News)
+        fun onItemClicked(data: ResponseNews)
+    }
+
+    fun setData(data : ArrayList<ResponseNews>){
+        listNews.clear()
+        listNews.addAll(data)
+        notifyDataSetChanged()
     }
 }

@@ -3,6 +3,7 @@ package com.example.examplebotomnav.home
 import android.app.SearchManager
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -21,10 +22,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.examplebotomnav.R
 import com.example.examplebotomnav.databinding.ActivityMainBinding
+import com.example.examplebotomnav.newsAdapter.ApiClient
+import com.example.examplebotomnav.newsAdapter.ResponseNews
+import retrofit2.Call
+import retrofit2.Response
+import javax.security.auth.callback.Callback
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var rvNews: RecyclerView
+    private lateinit var adapterMain: AdapterMain
     private val list = ArrayList<News>()
 
     private lateinit var searchView: SearchView
@@ -55,8 +62,14 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        adapterMain = AdapterMain(this@MainActivity, arrayListOf())
+
+        binding.
+
         rvNews = findViewById(R.id.rv_rekom)
         rvNews.setHasFixedSize(true)
+
+
 
         list.addAll(getListHeroes())
         showRecyclerList()
@@ -131,5 +144,30 @@ class MainActivity : AppCompatActivity() {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
         }
         return super.onCreateOptionsMenu(menu)
+    }
+
+    fun remoteGetUser(){
+        ApiClient.apiServise.getCurrentNewsData(country = "id", apikey = "pub_441345579ea14058b12ed8aad247be22ecbd4&").enqueue(object : Callback<ArrayList<ResponseNews>>{
+            override fun onResponse(
+                call: Call<ArrayList<ResponseNews>>,
+                response: Response<ArrayList<ResponseNews>>
+            ){
+                if (response.isSuccessful){
+                    val data = response.body()
+                    if (data != null) {
+                        setDataToAdapter(data)
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<ArrayList<ResponseNews>>, t: Throwable){
+                Log.d("Error", ""+ t.stackTraceToString())
+            }
+
+        })
+    }
+
+    fun setDataToAdapter(data: ArrayList<ResponseNews>){
+        adapterMain.setData(data)
     }
 }
