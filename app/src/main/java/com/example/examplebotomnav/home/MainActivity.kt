@@ -1,4 +1,4 @@
-package com.example.examplebotomnav
+package com.example.examplebotomnav.home
 
 import android.app.SearchManager
 import android.content.Context
@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -16,9 +17,15 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.examplebotomnav.R
 import com.example.examplebotomnav.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var rvNews: RecyclerView
+    private val list = ArrayList<News>()
 
     private lateinit var searchView: SearchView
 
@@ -48,6 +55,40 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        rvNews = findViewById(R.id.rv_rekom)
+        rvNews.setHasFixedSize(true)
+
+        list.addAll(getListHeroes())
+        showRecyclerList()
+
+    }
+
+    private fun getListHeroes(): ArrayList<News> {
+        val dataName = resources.getStringArray(R.array.data_name)
+        val dataDescription = resources.getStringArray(R.array.data_description)
+        val dataPhoto = resources.getStringArray(R.array.data_photo)
+        val listHero = ArrayList<News>()
+        for (i in dataName.indices) {
+            val hero = News(dataName[i], dataDescription[i], dataPhoto[i])
+            listHero.add(hero)
+        }
+        return listHero
+    }
+
+    private fun showRecyclerList() {
+        rvNews.layoutManager = LinearLayoutManager(this)
+        val listHeroAdapter = AdapterMain(list)
+        rvNews.adapter = listHeroAdapter
+
+        listHeroAdapter.setOnItemClickCallback(object : AdapterMain.OnItemClickCallback {
+            override fun onItemClicked(data: News) {
+                showSelectedHero(data)
+            }
+        })
+    }
+
+    private fun showSelectedHero(hero: News) {
+        Toast.makeText(this, "Kamu memilih " + hero.name, Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -91,14 +132,4 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onCreateOptionsMenu(menu)
     }
-
-
-//    override fun onBackPressed() {
-//        if (!searchView.isIconified()) {
-//            searchView.onActionViewCollapsed();
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
-
 }
