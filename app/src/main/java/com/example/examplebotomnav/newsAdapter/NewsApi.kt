@@ -5,6 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface NewsApi {
-    @GET("api/1/news?")
-    fun getCurrentNewsData(@Query("country") country : String, @Query("apikey") apikey: String): Call<ResponseNews>
+    @GET("news")
+    fun getCurrentNewsData(@Query("apikey") apikey: String, @Query("country") country : String): Call<ResponseNews>
 }

@@ -8,7 +8,7 @@ import retrofit2.create
 
 object ApiClient {
 
-    val baseURL = "https://newsdata.io/"
+    val baseURL = "https://newsdata.io/api/1/"
 
     val apiServise: NewsApi
         get() {

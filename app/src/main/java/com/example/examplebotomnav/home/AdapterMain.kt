@@ -3,14 +3,17 @@ package com.example.examplebotomnav.home
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.examplebotomnav.databinding.LayBeritaBinding
 import com.example.examplebotomnav.newsAdapter.ResponseNews
+import com.example.examplebotomnav.newsAdapter.ResultsItem
 
 class AdapterMain(
-    private val context: Context,
-    private val listNews: ArrayList<ResponseNews>) : RecyclerView.Adapter<AdapterMain.ListViewHolder>() {
+    private val listNews: ArrayList<ResultsItem>) : RecyclerView.Adapter<AdapterMain.ListViewHolder>() {
+
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -23,26 +26,30 @@ class AdapterMain(
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name, description, photo) = listNews[position]
+        val news = listNews[position]
         Glide.with(holder.itemView.context)
-            .load(photo)
-            .into(holder.binding.imgNews)
-        holder.binding.tvwTitle.text = name.toString()
-        holder.binding.tvwDesc.text = description
+            .load(news.imageUrl)
+            .into(holder.imgNews)
+        holder.titleNews.text = news.title
+        holder.deskNews.text = news.pubDate
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listNews[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int = listNews.size
 
-    class ListViewHolder(val binding: LayBeritaBinding) : RecyclerView.ViewHolder(binding.root)
-
-    interface OnItemClickCallback {
-        fun onItemClicked(data: ResponseNews)
+    class ListViewHolder(val binding: LayBeritaBinding) : RecyclerView.ViewHolder(binding.root){
+        val imgNews: ImageView = binding.imgNews
+        val titleNews: TextView = binding.tvwTitle
+        val deskNews: TextView = binding.tvwDesc
     }
 
-    fun setData(data : ArrayList<ResponseNews>){
+    interface OnItemClickCallback {
+        fun onItemClicked(data: ResultsItem)
+    }
+
+    fun setData(data : ArrayList<ResultsItem?>?){
         listNews.clear()
-        listNews.addAll(data)
+        listNews.addAll(data?.toMutableList() as ArrayList<ResultsItem>)
         notifyDataSetChanged()
     }
 }

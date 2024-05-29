@@ -24,6 +24,7 @@ import com.example.examplebotomnav.R
 import com.example.examplebotomnav.databinding.ActivityMainBinding
 import com.example.examplebotomnav.newsAdapter.ApiClient
 import com.example.examplebotomnav.newsAdapter.ResponseNews
+import com.example.examplebotomnav.newsAdapter.ResultsItem
 import retrofit2.Call
 import retrofit2.Response
 import javax.security.auth.callback.Callback
@@ -62,46 +63,6 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        adapterMain = AdapterMain(this@MainActivity, arrayListOf())
-
-        binding.
-
-        rvNews = findViewById(R.id.rv_rekom)
-        rvNews.setHasFixedSize(true)
-
-
-
-        list.addAll(getListHeroes())
-        showRecyclerList()
-
-    }
-
-    private fun getListHeroes(): ArrayList<News> {
-        val dataName = resources.getStringArray(R.array.data_name)
-        val dataDescription = resources.getStringArray(R.array.data_description)
-        val dataPhoto = resources.getStringArray(R.array.data_photo)
-        val listHero = ArrayList<News>()
-        for (i in dataName.indices) {
-            val hero = News(dataName[i], dataDescription[i], dataPhoto[i])
-            listHero.add(hero)
-        }
-        return listHero
-    }
-
-    private fun showRecyclerList() {
-        rvNews.layoutManager = LinearLayoutManager(this)
-        val listHeroAdapter = AdapterMain(list)
-        rvNews.adapter = listHeroAdapter
-
-        listHeroAdapter.setOnItemClickCallback(object : AdapterMain.OnItemClickCallback {
-            override fun onItemClicked(data: News) {
-                showSelectedHero(data)
-            }
-        })
-    }
-
-    private fun showSelectedHero(hero: News) {
-        Toast.makeText(this, "Kamu memilih " + hero.name, Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -144,30 +105,5 @@ class MainActivity : AppCompatActivity() {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
         }
         return super.onCreateOptionsMenu(menu)
-    }
-
-    fun remoteGetUser(){
-        ApiClient.apiServise.getCurrentNewsData(country = "id", apikey = "pub_441345579ea14058b12ed8aad247be22ecbd4&").enqueue(object : Callback<ArrayList<ResponseNews>>{
-            override fun onResponse(
-                call: Call<ArrayList<ResponseNews>>,
-                response: Response<ArrayList<ResponseNews>>
-            ){
-                if (response.isSuccessful){
-                    val data = response.body()
-                    if (data != null) {
-                        setDataToAdapter(data)
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<ArrayList<ResponseNews>>, t: Throwable){
-                Log.d("Error", ""+ t.stackTraceToString())
-            }
-
-        })
-    }
-
-    fun setDataToAdapter(data: ArrayList<ResponseNews>){
-        adapterMain.setData(data)
     }
 }
