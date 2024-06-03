@@ -22,7 +22,16 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_dashboard"
             app:destination="@id/navigation_dashboard" />
+        <action
+            android:id="@+id/action_navigation_home_to_duwaSportFragment"
+            app:destination="@id/duwaSportFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/duwaSportFragment"
+        android:name="com.example.examplebotomnav.kategori.DuwaSportFragment"
+        android:label="DuwaSportFragment"
+        tools:layout="@layout/fragment_duwa_sport" />
 
     <fragment
         android:id="@+id/navigation_dashboard"

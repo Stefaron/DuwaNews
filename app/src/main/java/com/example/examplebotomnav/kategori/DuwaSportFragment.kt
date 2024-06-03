@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.examplebotomnav.databinding.FragmentDuwaSportBinding
 import com.example.examplebotomnav.kategori.adapterKategori.SportAdapter
@@ -18,7 +19,6 @@ import retrofit2.Call
 import retrofit2.Response
 
 class DuwaSportFragment : Fragment() {
-
     private lateinit var adapter: SportAdapter
     private val list = ArrayList<ResultsItem>()
 
@@ -30,7 +30,6 @@ class DuwaSportFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentDuwaSportBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -39,6 +38,10 @@ class DuwaSportFragment : Fragment() {
         val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.rvSport.layoutManager = layoutManager
         binding.rvSport.adapter = adapter
+
+        binding.backButton.setOnClickListener {
+            findNavController().navigateUp()
+        }
 
         getNews()
         return root
