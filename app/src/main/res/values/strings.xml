@@ -31,7 +31,7 @@
     <string name="ket_berita">DuwaSport ~ Rabu, 27 Maret 2024 19.45 WIB</string>
     <string name="nama_us">Yefta Indri</string>
     <string name="tv_nama">Nama Lengkap</string>
-    <string name="logout">Keluar</string>
+    <string name="logout">Log Out</string>
     <string name="tv_email">Email</string>
     <string name="email_us">yeftaindri@gmail.com</string>
     <string name="tv_notelp">No Telfon</string>
@@ -98,6 +98,7 @@
          \nJika Anda memiliki pertanyaan atau kekhawatiran terkait dengan syarat dan ketentuan ini, silakan hubungi kami melalui informasi kontak yang tersedia dalam aplikasi ini.
          \nDengan menggunakan aplikasi ini, Anda dianggap telah menyetujui semua syarat dan ketentuan yang tercantum di atas.</string>
     <string name="setuju">Saya Setuju</string>
+    <string name="Email">Email</string>
 
     <string-array name="data_name">
         <item>Ahmad Dahlan</item>

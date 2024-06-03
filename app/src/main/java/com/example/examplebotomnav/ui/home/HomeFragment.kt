@@ -5,17 +5,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.examplebotomnav.databinding.ActivityMainBinding
+import com.example.examplebotomnav.R
 import com.example.examplebotomnav.databinding.FragmentHomeBinding
-import com.example.examplebotomnav.home.AdapterMain
-import com.example.examplebotomnav.home.News
+import com.example.examplebotomnav.newsAdapter.AdapterMain
 import com.example.examplebotomnav.newsAdapter.ApiClient
 import com.example.examplebotomnav.newsAdapter.ResponseNews
 import com.example.examplebotomnav.newsAdapter.ResultsItem
@@ -45,11 +42,16 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        adapterMain = AdapterMain(list)
+        adapterMain = context?.let { AdapterMain(list, it) }!!
 
         val layoutmanager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.rvRekom.layoutManager = layoutmanager
         binding.rvRekom.adapter = adapterMain
+
+        binding.btnDuwasport.setOnClickListener {
+            
+        }
+
 
 
         getNews()
@@ -61,7 +63,7 @@ class HomeFragment : Fragment() {
 //    }
 
     fun getNews(){
-        ApiClient.apiServise.getCurrentNewsData(apikey = "pub_441345579ea14058b12ed8aad247be22ecbd4", country = "id")
+        ApiClient.apiServise.getCurrentNewsData(apikey = "pub_441345579ea14058b12ed8aad247be22ecbd4", country = "id", category = "top")
             .enqueue(object : retrofit2.Callback<ResponseNews>{
 
                 override fun onResponse(

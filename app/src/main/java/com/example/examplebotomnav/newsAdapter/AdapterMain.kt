@@ -1,5 +1,6 @@
-package com.example.examplebotomnav.home
+package com.example.examplebotomnav.newsAdapter
 
+import android.content.Intent
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,12 +8,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.examplebotomnav.DetailNews
 import com.example.examplebotomnav.databinding.LayBeritaBinding
-import com.example.examplebotomnav.newsAdapter.ResponseNews
-import com.example.examplebotomnav.newsAdapter.ResultsItem
 
 class AdapterMain(
-    private val listNews: ArrayList<ResultsItem>) : RecyclerView.Adapter<AdapterMain.ListViewHolder>() {
+    private val listNews: ArrayList<ResultsItem>,
+    private val context: Context) : RecyclerView.Adapter<AdapterMain.ListViewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
 
@@ -32,7 +33,12 @@ class AdapterMain(
             .into(holder.imgNews)
         holder.titleNews.text = news.title
         holder.deskNews.text = news.pubDate
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listNews[holder.adapterPosition]) }
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, DetailNews::class.java).apply {
+                // nanti ngirim api disini
+            }
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = listNews.size

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/blue"
     android:orientation="horizontal"
-    tools:context=".ui.notifications.NotificationsFragment">
+    tools:context=".ui.detailUser.DetailUserFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -50,6 +50,7 @@
 
 
             <TextView
+                android:id="@+id/tv_namaUser"
                 android:layout_width="120dp"
                 android:layout_height="20dp"
                 android:textColor="@color/black"
@@ -88,12 +89,13 @@
                         android:layout_height="20dp"
                         android:textColor="@color/black"
                         android:layout_gravity="start"
-                        android:text="@string/tv_nama"
+                        android:text="@string/username"
                         android:textSize="17dp">
 
                     </TextView>
 
                     <TextView
+                        android:id="@+id/tv_username"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:textColor="@color/black"
@@ -136,6 +138,7 @@
                     </TextView>
 
                     <TextView
+                        android:id="@+id/tv_email"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:textColor="@color/black"
@@ -178,6 +181,7 @@
                     </TextView>
 
                     <TextView
+                        android:id="@+id/tv_noTelp"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:textColor="@color/black"
@@ -220,6 +224,7 @@
                     </TextView>
 
                     <TextView
+                        android:id="@+id/tv_beritaFav"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:textColor="@color/black"
