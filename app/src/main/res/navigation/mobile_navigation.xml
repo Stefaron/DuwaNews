@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.examplebotomnav.ui.notifications.NotificationsFragment"
+        android:name="com.example.examplebotomnav.ui.detailUser.DetailUserFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_notifications" />
     <fragment
