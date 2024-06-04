@@ -90,7 +90,8 @@
                         android:textColor="@color/black"
                         android:layout_gravity="start"
                         android:text="@string/tv_email"
-                        android:textSize="17dp">
+                        android:textSize="17dp"
+                        android:fontFamily="@font/poppins">
 
                     </TextView>
 
@@ -133,7 +134,8 @@
                         android:textColor="@color/black"
                         android:layout_gravity="start"
                         android:text="@string/tv_notelp"
-                        android:textSize="17dp">
+                        android:textSize="17dp"
+                        android:fontFamily="@font/poppins">
 
                     </TextView>
 
@@ -157,7 +159,9 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:text="@string/logout">
+                android:background="@drawable/rounded_corner"
+                android:text="@string/logout"
+                android:fontFamily="@font/poppins">
 
             </Button>
         </LinearLayout>

@@ -44,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/signup"
+                android:fontFamily="@font/poppins"
                 android:textColor="@color/black"
                 android:textSize="36sp"
                 android:textStyle="bold">
@@ -54,11 +55,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
                 android:text="@string/username"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/usernameRegis"
                 android:hint="@string/username"
+                android:fontFamily="@font/poppins"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="text"
@@ -69,7 +72,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:text="@string/email"/>
+                android:text="@string/email"
+                android:fontFamily="@font/poppins"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailRegis"
@@ -78,13 +82,15 @@
                 android:layout_height="50dp"
                 android:inputType="text"
                 android:background="@color/abu"
+                android:fontFamily="@font/poppins"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:text="@string/NomorHP"/>
+                android:text="@string/NomorHP"
+                android:fontFamily="@font/poppins"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/noTelp"
@@ -93,13 +99,15 @@
                 android:layout_height="50dp"
                 android:inputType="text"
                 android:background="@color/abu"
+                android:fontFamily="@font/poppins"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/password"
                 android:textColor="@color/black"
-                android:text="@string/password"/>
+                android:fontFamily="@font/poppins"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
@@ -108,6 +116,7 @@
                 android:layout_height="50dp"
                 android:inputType="text"
                 android:background="@color/abu"
+                android:fontFamily="@font/poppins"
                 />
 
             <CheckBox
@@ -115,6 +124,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
                 android:text="@string/sk" />
 
             <Button
@@ -122,9 +132,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="80dp"
+                android:backgroundTint="@color/blue"
                 android:text="@string/signup"
+                android:background="@drawable/rounded_corner"
                 android:textColor="@color/white"
-                android:backgroundTint="@color/blue"/>
+                android:fontFamily="@font/poppins"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -132,7 +144,8 @@
                 android:text="@string/haveacc"
                 android:textColor="@color/black"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins"/>
 
 
         </LinearLayout>

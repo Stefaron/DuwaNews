@@ -60,7 +60,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
-    <string name="signup">SIGN UP</string>
+    <string name="signup">Sign Up</string>
     <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
