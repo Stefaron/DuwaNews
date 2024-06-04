@@ -2,6 +2,9 @@ package com.example.examplebotomnav.data
 
 import android.annotation.SuppressLint
 
-class User(val username : String, val password : String) {
-
-}
+data class User(
+    val email: String = "",
+    val noTelp: String = "",
+    val username: String = "",
+    val password: String= ""
+)

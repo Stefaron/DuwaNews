@@ -84,11 +84,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:text="@string/password"/>
+                android:text="@string/NomorHP"/>
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordRegis"
-                android:hint="@string/password"
+                android:id="@+id/noTelp"
+                android:hint="@string/NomorHP"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="text"
@@ -99,11 +99,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:text="@string/confirm"/>
+                android:text="@string/password"/>
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/confirmPasswordRegis"
-                android:hint="@string/confirm"
+                android:id="@+id/password"
+                android:hint="@string/password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="text"

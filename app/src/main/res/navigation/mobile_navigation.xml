@@ -43,7 +43,7 @@
         android:id="@+id/navigation_notifications"
         android:name="com.example.examplebotomnav.ui.detailUser.DetailUserFragment"
         android:label="@string/title_account"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_detail_user" />
     <fragment
         android:id="@+id/syaratKetentuanFragment"
         android:name="com.example.examplebotomnav.SyaratKetentuanFragment"

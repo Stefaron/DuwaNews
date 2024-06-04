@@ -99,6 +99,7 @@
          \nDengan menggunakan aplikasi ini, Anda dianggap telah menyetujui semua syarat dan ketentuan yang tercantum di atas.</string>
     <string name="setuju">Saya Setuju</string>
     <string name="Email">Email</string>
+    <string name="NomorHP">Nomor HP</string>
 
     <string-array name="data_name">
         <item>Ahmad Dahlan</item>

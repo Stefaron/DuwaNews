@@ -11,34 +11,36 @@ import com.example.examplebotomnav.home.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class RegistActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityRegistBinding
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize Firebase Auth
+        // Initialize Firebase Auth and Database
         auth = Firebase.auth
+        database = Firebase.database.reference
 
         // Set up the sign-up button listener
         binding.btnSignup.setOnClickListener {
             val username = binding.usernameRegis.text.toString()
             val email = binding.emailRegis.text.toString()
-            val password = binding.passwordRegis.text.toString()
-            val confirmpass = binding.confirmPasswordRegis.text.toString()
+            val noTelp = binding.noTelp.text.toString()
+            val password = binding.password.text.toString()
 
-            if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmpass.isEmpty()) {
+            if (username.isEmpty() || email.isEmpty() || noTelp.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Ada data yang masih kosong", Toast.LENGTH_SHORT).show()
-            } else if (password != confirmpass) {
-                Toast.makeText(this, "Password dan konfirmasi password tidak cocok", Toast.LENGTH_SHORT).show()
             } else {
-                createAccount(email, password)
+                createAccount(username, email, noTelp, password)
             }
         }
     }
@@ -51,14 +53,25 @@ class RegistActivity : AppCompatActivity() {
         }
     }
 
-    private fun createAccount(email: String, password: String) {
+    private fun createAccount(username: String, email: String, noTelp: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
-//                    sendEmailVerification()
-                    updateUI(user)
+                    user?.let {
+                        val uid = it.uid
+                        val userMap = User(username, email, noTelp)
+                        database.child("users").child(uid).setValue(userMap)
+                            .addOnCompleteListener { dbTask ->
+                                if (dbTask.isSuccessful) {
+                                    updateUI(user)
+                                } else {
+                                    Log.w(TAG, "setValue:failure", dbTask.exception)
+                                    Toast.makeText(baseContext, "Failed to save user data.", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                    }
                 } else {
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
                     Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
@@ -100,14 +113,6 @@ class RegistActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-
-            // Check if email is verified
-//            if (user.isEmailVerified) {
-//                // Go to another activity, e.g., main activity
-//
-//            } else {
-//                Toast.makeText(this, "Please verify your email address.", Toast.LENGTH_SHORT).show()
-//            }
         }
     }
 
@@ -119,3 +124,5 @@ class RegistActivity : AppCompatActivity() {
         private const val TAG = "EmailPassword"
     }
 }
+
+data class User(val username: String, val email: String, val noTelp: String)

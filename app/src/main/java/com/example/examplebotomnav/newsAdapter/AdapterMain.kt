@@ -35,7 +35,7 @@ class AdapterMain(
         holder.deskNews.text = news.pubDate
         holder.itemView.setOnClickListener {
             val intent = Intent(context, DetailNews::class.java).apply {
-                // nanti ngirim api disini
+                putExtra(DetailNews.EXTRA_ARTICLE_ID, news.articleId)
             }
             context.startActivity(intent)
         }

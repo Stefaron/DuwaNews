@@ -54,7 +54,7 @@
                 android:layout_width="120dp"
                 android:layout_height="20dp"
                 android:textColor="@color/black"
-                android:text="@string/nama_us"
+                android:text=""
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
@@ -69,49 +69,6 @@
                 android:layout_height="80dp"
                 android:padding="10dp"
                 android:layout_marginTop="40dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_account">
-                </ImageView>
-
-                <LinearLayout
-                    android:layout_width="220dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="15dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:textColor="@color/black"
-                        android:layout_gravity="start"
-                        android:text="@string/username"
-                        android:textSize="17dp">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/tv_username"
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:textColor="@color/black"
-                        android:text="@string/nama_us"
-                        android:textStyle="bold"
-                        android:textSize="15dp"
-                        android:layout_marginTop="5dp">
-                    </TextView>
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:padding="10dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -142,7 +99,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:textColor="@color/black"
-                        android:text="@string/email_us"
+                        android:text=""
                         android:textStyle="bold"
                         android:textSize="15dp"
                         android:layout_marginTop="5dp">
@@ -185,50 +142,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:textColor="@color/black"
-                        android:text="@string/notelp_us"
-                        android:textStyle="bold"
-                        android:textSize="15dp"
-                        android:layout_marginTop="5dp">
-                    </TextView>
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:padding="10dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_beritafav">
-                </ImageView>
-
-                <LinearLayout
-                    android:layout_width="220dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="15dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:textColor="@color/black"
-                        android:layout_gravity="start"
-                        android:text="@string/tv_beritafav"
-                        android:textSize="17dp">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/tv_beritaFav"
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:textColor="@color/black"
-                        android:text="@string/beritafav_us"
+                        android:text=""
                         android:textStyle="bold"
                         android:textSize="15dp"
                         android:layout_marginTop="5dp">

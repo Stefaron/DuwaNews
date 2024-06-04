@@ -5,14 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import com.example.examplebotomnav.data.User
 import com.example.examplebotomnav.databinding.ActivityLoginBinding
-import com.example.examplebotomnav.databinding.ActivityRegistBinding
 import com.example.examplebotomnav.home.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -23,9 +17,6 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityLoginBinding
-
-    val sampleUser = User("admin", "123")
-    var listUser = listOf(sampleUser)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,11 +75,11 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
-    private fun saveUserSession(user: FirebaseUser?){
-        SessionManager.setLoggedIn(this,true)
-        val sharedPreferences = getSharedPreferences("User Session", MODE_PRIVATE)
+    private fun saveUserSession(user: FirebaseUser?) {
+        val sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-        editor.putString("userEmail",user?.email)
+        editor.putBoolean("isLoggedIn", true)
+        editor.putString("userEmail", user?.email)
         editor.apply()
     }
 
@@ -97,8 +88,7 @@ class LoginActivity : AppCompatActivity() {
         clearUserSession()
     }
 
-
-    fun clearUserSession() {
+    private fun clearUserSession() {
         val sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.clear()
@@ -116,9 +106,5 @@ class LoginActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "EmailPassword"
-    }
-
-    fun addUser(username : String, password : String) {
-        listUser
     }
 }
