@@ -55,7 +55,7 @@ class HomeFragment : Fragment() {
 
     fun getNews() {
         ApiClient.apiServise.getCurrentNewsData(
-            apikey = "pub_441345579ea14058b12ed8aad247be22ecbd4",
+            apikey = "pub_45164ee11245339059bf0004497eaecc04f06",
             country = "id",
             category = "top"
         ).enqueue(object : retrofit2.Callback<ResponseNews> {

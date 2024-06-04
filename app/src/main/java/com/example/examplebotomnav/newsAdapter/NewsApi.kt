@@ -15,4 +15,8 @@ interface NewsApi {
 
     @GET("news")
     fun getDetailNewsData(@Query("apikey") apikey: String, @Query("id") id : String): Call<DetailResponse>
+
+    @GET("news")
+    fun searchNews(@Query("apikey") apikey: String, @Query("q") q : String, @Query("country") country : String): Call<ResponseNews>
+
 }
