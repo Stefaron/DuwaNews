@@ -6,15 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.examplebotomnav.databinding.FragmentDuwaSportBinding
 import com.example.examplebotomnav.kategori.adapterKategori.SportAdapter
 import com.example.examplebotomnav.kategori.responseKategori.ResultsItem
-import com.example.examplebotomnav.kategori.responseKategori.SportResponse
+import com.example.examplebotomnav.kategori.responseKategori.AllResponse
 import com.example.examplebotomnav.newsAdapter.ApiClient
-import com.example.examplebotomnav.newsAdapter.ResponseNews
 import retrofit2.Call
 import retrofit2.Response
 
@@ -52,9 +50,9 @@ class DuwaSportFragment : Fragment() {
             apikey = "pub_441345579ea14058b12ed8aad247be22ecbd4",
             country = "id",
             category = "sports"
-        ).enqueue(object : retrofit2.Callback<SportResponse> {
+        ).enqueue(object : retrofit2.Callback<AllResponse> {
 
-            override fun onResponse(call: Call<SportResponse>, response: Response<SportResponse>) {
+            override fun onResponse(call: Call<AllResponse>, response: Response<AllResponse>) {
                 if (response.isSuccessful) {
                     val data = response.body()
                     if (data != null) {
@@ -63,7 +61,7 @@ class DuwaSportFragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<SportResponse>, t: Throwable) {
+            override fun onFailure(call: Call<AllResponse>, t: Throwable) {
                 t.message?.let { Log.e("Failure", it) }
             }
 

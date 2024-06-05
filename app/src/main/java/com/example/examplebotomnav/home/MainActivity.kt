@@ -2,7 +2,6 @@ package com.example.examplebotomnav.home
 
 import android.app.SearchManager
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -21,7 +20,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.examplebotomnav.DetailNews
 import com.example.examplebotomnav.R
 import com.example.examplebotomnav.databinding.ActivityMainBinding
 import com.example.examplebotomnav.newsAdapter.AdapterMain
