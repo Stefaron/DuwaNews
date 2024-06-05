@@ -2,7 +2,7 @@ package com.example.examplebotomnav.kategori.responseKategori
 
 import com.google.gson.annotations.SerializedName
 
-data class SportResponse(
+data class AllResponse(
 
 	@field:SerializedName("totalResults")
 	val totalResults: Int? = null,

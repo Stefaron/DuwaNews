@@ -55,7 +55,7 @@
                         android:id="@+id/btn_duwasport"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="20dp"
                         android:orientation="vertical">
 
@@ -73,8 +73,8 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/ic_running"
-                                android:contentDescription="@string/title_account">
+                                android:contentDescription="@string/title_account"
+                                android:src="@drawable/ic_running">
 
                             </ImageView>
 
@@ -95,6 +95,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/btn_duwafood"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_marginStart="40dp"
@@ -134,6 +135,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/btn_duwahealth"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_marginStart="40dp"
@@ -184,7 +186,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="20dp"
                         android:orientation="vertical">
 
@@ -310,7 +312,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="20dp"
                         android:orientation="vertical">
 
