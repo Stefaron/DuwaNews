@@ -53,6 +53,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_navigation_home_to_duwaHealthFragment)
         }
 
+        binding.btnDuwafood.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_duwaFoodFragment)
+        }
+
         getNews()
         return root
     }

@@ -1,60 +1,79 @@
 package com.example.examplebotomnav.kategori
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.examplebotomnav.R
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.examplebotomnav.databinding.FragmentDuwaFoodBinding
+import com.example.examplebotomnav.kategori.adapterKategori.Adapter
+import com.example.examplebotomnav.kategori.responseKategori.AllResponse
+import com.example.examplebotomnav.kategori.responseKategori.ResultsItem
+import com.example.examplebotomnav.newsAdapter.ApiClient
+import retrofit2.Call
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [DuwaFoodFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class DuwaFoodFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var adapter: Adapter
+    private val list = ArrayList<ResultsItem>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentDuwaFoodBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_duwa_food, container, false)
+    ): View {
+        _binding = FragmentDuwaFoodBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+
+        adapter = context?.let { Adapter(list, it) }!!
+
+        val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.rvFood.layoutManager = layoutManager
+        binding.rvFood.adapter = adapter
+
+        binding.backButton.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        getNews()
+        return root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DuwaFoodFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DuwaFoodFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun getNews() {
+        ApiClient.apiServise.getCategoryNewsData(
+            apikey = "pub_441345579ea14058b12ed8aad247be22ecbd4",
+            country = "id",
+            category = "food"
+        ).enqueue(object : retrofit2.Callback<AllResponse> {
+            override fun onResponse(call: Call<AllResponse>, response: Response<AllResponse>) {
+                if (response.isSuccessful) {
+                    val data = response.body()
+                    if (data != null) {
+                        setDataToAdapter(data.results)
+                    }
                 }
             }
+
+            override fun onFailure(call: Call<AllResponse>, t: Throwable) {
+                t.message?.let { Log.e("Failure", it) }
+            }
+
+        })
+    }
+
+    private fun setDataToAdapter(data: List<ResultsItem?>?) {
+        val list = ArrayList(data)
+        adapter.setData(list)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

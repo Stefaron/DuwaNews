@@ -26,7 +26,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_sport"
+                android:id="@+id/rv_health"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:paddingBottom="60dp"

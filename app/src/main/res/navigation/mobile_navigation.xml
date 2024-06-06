@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_navigation_home_to_duwaHealthFragment"
             app:destination="@id/duwaHealthFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_duwaFoodFragment"
+            app:destination="@id/duwaFoodFragment" />
     </fragment>
 
     <fragment
@@ -57,4 +60,9 @@
         android:name="com.example.examplebotomnav.kategori.DuwaHealthFragment"
         android:label="fragment_duwa_health"
         tools:layout="@layout/fragment_duwa_health" />
+    <fragment
+        android:id="@+id/duwaFoodFragment"
+        android:name="com.example.examplebotomnav.kategori.DuwaFoodFragment"
+        android:label="fragment_duwa_food"
+        tools:layout="@layout/fragment_duwa_food" />
 </navigation>
