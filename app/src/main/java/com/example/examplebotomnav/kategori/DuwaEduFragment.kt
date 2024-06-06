@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.examplebotomnav.databinding.FragmentDuwaLawBinding
+import com.example.examplebotomnav.databinding.FragmentDuwaEduBinding
 import com.example.examplebotomnav.kategori.adapterKategori.Adapter
 import com.example.examplebotomnav.kategori.responseKategori.AllResponse
 import com.example.examplebotomnav.kategori.responseKategori.ResultsItem
@@ -16,11 +16,11 @@ import com.example.examplebotomnav.newsAdapter.ApiClient
 import retrofit2.Call
 import retrofit2.Response
 
-class DuwaLawFragment : Fragment() {
+class DuwaEduFragment : Fragment() {
     private lateinit var adapter: Adapter
     private val list = ArrayList<ResultsItem>()
 
-    private var _binding: FragmentDuwaLawBinding? = null
+    private var _binding: FragmentDuwaEduBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -28,14 +28,14 @@ class DuwaLawFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDuwaLawBinding.inflate(inflater, container, false)
+        _binding = FragmentDuwaEduBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         adapter = context?.let { Adapter(list, it) }!!
 
         val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        binding.rvLaw.layoutManager = layoutManager
-        binding.rvLaw.adapter = adapter
+        binding.rvEdu.layoutManager = layoutManager
+        binding.rvEdu.adapter = adapter
 
         binding.backButton.setOnClickListener {
             findNavController().navigateUp()
@@ -49,7 +49,7 @@ class DuwaLawFragment : Fragment() {
         ApiClient.apiServise.getCategoryNewsData(
             apikey = "pub_441345579ea14058b12ed8aad247be22ecbd4",
             country = "id",
-            category = "politics"
+            category = "education"
         ).enqueue(object : retrofit2.Callback<AllResponse> {
             override fun onResponse(call: Call<AllResponse>, response: Response<AllResponse>) {
                 if (response.isSuccessful) {
