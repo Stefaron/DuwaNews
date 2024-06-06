@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.examplebotomnav.databinding.FragmentDuwaHealthBinding
-import com.example.examplebotomnav.kategori.adapterKategori.HealthAdapter
+import com.example.examplebotomnav.kategori.adapterKategori.Adapter
 import com.example.examplebotomnav.kategori.responseKategori.AllResponse
 import com.example.examplebotomnav.kategori.responseKategori.ResultsItem
 import com.example.examplebotomnav.newsAdapter.ApiClient
@@ -17,7 +17,7 @@ import retrofit2.Call
 import retrofit2.Response
 
 class DuwaHealthFragment : Fragment() {
-    private lateinit var adapter: HealthAdapter
+    private lateinit var adapter: Adapter
     private val list = ArrayList<ResultsItem>()
 
     private var _binding: FragmentDuwaHealthBinding? = null
@@ -31,11 +31,11 @@ class DuwaHealthFragment : Fragment() {
         _binding = FragmentDuwaHealthBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        adapter = context?.let { HealthAdapter(list, it) }!!
+        adapter = context?.let { Adapter(list, it) }!!
 
         val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        binding.rvSport.layoutManager = layoutManager
-        binding.rvSport.adapter = adapter
+        binding.rvHealth.layoutManager = layoutManager
+        binding.rvHealth.adapter = adapter
 
         binding.backButton.setOnClickListener {
             findNavController().navigateUp()

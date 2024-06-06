@@ -12,9 +12,10 @@ import com.example.examplebotomnav.DetailNews
 import com.example.examplebotomnav.databinding.LayBeritaBinding
 import com.example.examplebotomnav.kategori.responseKategori.ResultsItem
 
-class HealthAdapter(private val listNews: ArrayList<ResultsItem>,
-                    private val context: Context
-) : RecyclerView.Adapter<HealthAdapter.ListViewHolder>() {
+class Adapter(
+    private val listNews: ArrayList<ResultsItem>,
+    private val context: Context
+) : RecyclerView.Adapter<Adapter.ListViewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
 
@@ -27,7 +28,7 @@ class HealthAdapter(private val listNews: ArrayList<ResultsItem>,
         return ListViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: HealthAdapter.ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val news = listNews[position]
         Glide.with(holder.itemView.context)
             .load(news.imageUrl)
@@ -54,7 +55,7 @@ class HealthAdapter(private val listNews: ArrayList<ResultsItem>,
         fun onItemClicked(data: ResultsItem)
     }
 
-    fun setData(data: ArrayList<ResultsItem?>) {
+    fun setData(data: ArrayList<ResultsItem?>?) {
         listNews.clear()
         listNews.addAll(data?.filterNotNull() ?: emptyList())
         notifyDataSetChanged()
