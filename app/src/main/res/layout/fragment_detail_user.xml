@@ -48,6 +48,14 @@
                 app:civ_border_color="#FF000000"/>
 
 
+            <Button
+                android:id="@+id/changepfp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center">
+
+            </Button>
+
             <TextView
                 android:id="@+id/tv_namaUser"
                 android:layout_width="wrap_content"

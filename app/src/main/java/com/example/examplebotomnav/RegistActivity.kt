@@ -43,6 +43,8 @@ class RegistActivity : AppCompatActivity() {
                 createAccount(username, email, noTelp, password)
             }
         }
+
+
     }
 
     override fun onStart() {
