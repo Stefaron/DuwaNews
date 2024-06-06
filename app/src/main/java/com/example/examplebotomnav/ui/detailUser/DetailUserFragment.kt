@@ -1,8 +1,13 @@
 package com.example.examplebotomnav.ui.detailUser
 
 import android.app.Activity
+import android.content.ContentResolver
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +28,9 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.IOException
 
 class DetailUserFragment : Fragment() {
 
@@ -61,7 +69,7 @@ class DetailUserFragment : Fragment() {
             getUserData()
         }
 
-        binding.changepfp.setOnClickListener {
+        binding.profileImage.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
             startActivityForResult(intent, IMAGE_REQUEST_CODE)
@@ -98,11 +106,21 @@ class DetailUserFragment : Fragment() {
                         val username = snapshot.child("username").getValue(String::class.java)
                         val noTelp = snapshot.child("noTelp").getValue(String::class.java)
 
+
+
                         if (email != null && username != null && noTelp != null) {
                             // Update UI with user data
                             binding.tvNamaUser.text = username
                             binding.tvEmail.text = email
                             binding.tvNoTelp.text = noTelp
+
+                            storageReference = FirebaseStorage.getInstance().getReference("images").child(uid)
+                            var file: File = File.createTempFile("pfp", "jpeg")
+                            storageReference.getFile(file).
+                            addOnSuccessListener {
+                                var bitmap: Uri = Uri.fromFile(file)
+                                binding.profileImage.setImageURI(bitmap)
+                            }
                         } else {
                             // Handle case when user data is incomplete
                             Toast.makeText(requireContext(), "Incomplete user data", Toast.LENGTH_SHORT).show()
@@ -124,25 +142,40 @@ class DetailUserFragment : Fragment() {
         }
     }
 
-    private fun getUserProfile() {
-        storageReference = FirebaseStorage.getInstance().reference.child("Users/$uid.jpg")
-        // Logic to load user profile image, if needed
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        val imagePfp: ImageView? = view?.findViewById(R.id.profile_image)
-
         if (requestCode == IMAGE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            if (imagePfp != null) {
-                imagePfp.setImageURI(data?.data)
+            var fileUri: Uri? = data?.data
+            binding.profileImage.setImageURI(fileUri)
+
+            val ref: StorageReference = FirebaseStorage.getInstance().getReference("images").child(uid)
+
+            if (fileUri != null) {
+                ref.putBytes(compressImage(fileUri)).addOnSuccessListener {
+                    Toast.makeText(context, "Upload Berhasil!", Toast.LENGTH_LONG).show()
+                }.addOnFailureListener {
+                    Toast.makeText(context, "Upload Gagal", Toast.LENGTH_LONG).show()
+                }
             }
+
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
+    }
+
+    fun compressImage(uri: Uri):ByteArray {
+        val stream = ByteArrayOutputStream()
+        try {
+            val bitmap = MediaStore.Images.Media.getBitmap(context?.contentResolver, uri)
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 60, stream)
+            return stream.toByteArray()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        return stream.toByteArray()
     }
 }
