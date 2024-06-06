@@ -1,14 +1,17 @@
 package com.example.examplebotomnav.ui.detailUser
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.examplebotomnav.LoginActivity
+import com.example.examplebotomnav.R
 import com.example.examplebotomnav.SessionManager
 import com.example.examplebotomnav.data.User
 import com.example.examplebotomnav.databinding.FragmentDetailUserBinding
@@ -29,8 +32,14 @@ class DetailUserFragment : Fragment() {
     private lateinit var user: User
     private lateinit var uid: String
 
+//    private lateinit var imagePfp: ImageView
+
     private var _binding: FragmentDetailUserBinding? = null
     private val binding get() = _binding!!
+
+    companion object {
+        var IMAGE_REQUEST_CODE = 100
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,6 +61,12 @@ class DetailUserFragment : Fragment() {
             getUserData()
         }
 
+        binding.changepfp.setOnClickListener {
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent, IMAGE_REQUEST_CODE)
+        }
+
         // Set onClickListener for logout button
         binding.btnLogout.setOnClickListener {
             // Log out from Firebase
@@ -66,6 +81,7 @@ class DetailUserFragment : Fragment() {
             startActivity(intent)
             requireActivity().finish()
         }
+
         return root
     }
 
@@ -116,5 +132,17 @@ class DetailUserFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val imagePfp: ImageView? = view?.findViewById(R.id.profile_image)
+
+        if (requestCode == IMAGE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            if (imagePfp != null) {
+                imagePfp.setImageURI(data?.data)
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
     }
 }
