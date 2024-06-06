@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".kategori.DuwaHealthFragment"
-    android:id="@+id/duwaHealthFragment">
+    tools:context=".kategori.DuwaLawFragment"
+    android:id="@+id/duwaLawFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_health"
+                android:id="@+id/rv_law"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:paddingBottom="60dp"

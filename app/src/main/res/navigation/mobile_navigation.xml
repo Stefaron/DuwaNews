@@ -31,6 +31,24 @@
         <action
             android:id="@+id/action_navigation_home_to_duwaFoodFragment"
             app:destination="@id/duwaFoodFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_duwaLawFragment"
+            app:destination="@id/duwaLawFragment2" />
+        <action
+            android:id="@+id/action_navigation_home_to_duwaTravelFragment"
+            app:destination="@id/duwaTravelFragment2" />
+        <action
+            android:id="@+id/action_navigation_home_to_duwaEntertainmentFragment"
+            app:destination="@id/duwaGameFragment2" />
+        <action
+            android:id="@+id/action_navigation_home_to_duwaTechFragment"
+            app:destination="@id/duwaTechFragment2" />
+        <action
+            android:id="@+id/action_navigation_home_to_duwaLifeFragment"
+            app:destination="@id/duwaOtoFragment2" />
+        <action
+            android:id="@+id/action_navigation_home_to_duwaEduFragment"
+            app:destination="@id/duwaEduFragment2" />
     </fragment>
 
     <fragment
@@ -65,4 +83,34 @@
         android:name="com.example.examplebotomnav.kategori.DuwaFoodFragment"
         android:label="fragment_duwa_food"
         tools:layout="@layout/fragment_duwa_food" />
+    <fragment
+        android:id="@+id/duwaLawFragment2"
+        android:name="com.example.examplebotomnav.kategori.DuwaLawFragment"
+        android:label="fragment_duwa_law"
+        tools:layout="@layout/fragment_duwa_law" />
+    <fragment
+        android:id="@+id/duwaTravelFragment2"
+        android:name="com.example.examplebotomnav.kategori.DuwaTravelFragment"
+        android:label="fragment_duwa_travel"
+        tools:layout="@layout/fragment_duwa_travel" />
+    <fragment
+        android:id="@+id/duwaTechFragment2"
+        android:name="com.example.examplebotomnav.kategori.DuwaTechFragment"
+        android:label="fragment_duwa_tech"
+        tools:layout="@layout/fragment_duwa_tech" />
+    <fragment
+        android:id="@+id/duwaGameFragment2"
+        android:name="com.example.examplebotomnav.kategori.DuwaEntertainmentFragment"
+        android:label="fragment_duwa_game"
+        tools:layout="@layout/fragment_duwa_entertainment" />
+    <fragment
+        android:id="@+id/duwaOtoFragment2"
+        android:name="com.example.examplebotomnav.kategori.DuwaLifeFragment"
+        android:label="fragment_duwa_oto"
+        tools:layout="@layout/fragment_duwa_life" />
+    <fragment
+        android:id="@+id/duwaEduFragment2"
+        android:name="com.example.examplebotomnav.kategori.DuwaEduFragment"
+        android:label="fragment_duwa_edu"
+        tools:layout="@layout/fragment_duwa_edu" />
 </navigation>

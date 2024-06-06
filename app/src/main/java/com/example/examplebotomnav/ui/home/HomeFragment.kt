@@ -57,6 +57,30 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_navigation_home_to_duwaFoodFragment)
         }
 
+        binding.btnDuwalaw.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_duwaLawFragment)
+        }
+
+        binding.btnDuwatravel.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_duwaTravelFragment)
+        }
+
+        binding.btnDuwagame.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_duwaEntertainmentFragment)
+        }
+
+        binding.btnDuwatech.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_duwaTechFragment)
+        }
+
+        binding.btnDuwaoto.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_duwaLifeFragment)
+        }
+
+        binding.btnDuwaedu.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_duwaEduFragment)
+        }
+
         getNews()
         return root
     }

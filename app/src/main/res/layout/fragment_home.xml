@@ -35,7 +35,7 @@
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="290dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="20dp"
@@ -55,7 +55,7 @@
                         android:id="@+id/btn_duwasport"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="7dp"
                         android:layout_marginTop="20dp"
                         android:orientation="vertical">
 
@@ -184,9 +184,10 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/btn_duwalaw"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="7dp"
                         android:layout_marginTop="20dp"
                         android:orientation="vertical">
 
@@ -223,6 +224,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/btn_duwatravel"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_marginStart="40dp"
@@ -262,6 +264,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/btn_duwagame"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_marginStart="40dp"
@@ -310,9 +313,10 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/btn_duwatech"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="7dp"
                         android:layout_marginTop="20dp"
                         android:orientation="vertical">
 
@@ -349,6 +353,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/btn_duwaoto"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_marginStart="40dp"
@@ -388,6 +393,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/btn_duwaedu"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_marginStart="40dp"
