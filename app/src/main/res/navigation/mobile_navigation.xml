@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_navigation_home_to_duwaFoodFragment"
             app:destination="@id/duwaFoodFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_duwaLawFragment"
+            app:destination="@id/duwaLawFragment2" />
     </fragment>
 
     <fragment
@@ -65,4 +68,9 @@
         android:name="com.example.examplebotomnav.kategori.DuwaFoodFragment"
         android:label="fragment_duwa_food"
         tools:layout="@layout/fragment_duwa_food" />
+    <fragment
+        android:id="@+id/duwaLawFragment2"
+        android:name="com.example.examplebotomnav.kategori.DuwaLawFragment"
+        android:label="fragment_duwa_law"
+        tools:layout="@layout/fragment_duwa_law" />
 </navigation>
